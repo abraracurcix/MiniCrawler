@@ -16,7 +16,7 @@ public class SoundResources {
 	private static SoundResources instance;
 	
 	private SoundResources() {
-		theme = Gdx.audio.newMusic(Gdx.files.internal("data/sound/theme.wav"));
+		theme = Gdx.audio.newMusic(Gdx.files.internal("data/sound/theme.mp3"));
 		theme.setVolume(0.5f);
 		theme.setLooping(true);
 		hit = Gdx.audio.newSound(Gdx.files.internal("data/sound/hit.wav"));		
