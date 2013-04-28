@@ -1,6 +1,5 @@
 package com.nezzhil.ld48.minimalism;
 
-import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -16,6 +15,9 @@ public class Player extends Element {
 	public static final int TYPE = 0;
 	public static Animation walkUP;
 	public static Animation walkDOWN;
+
+	public static Animation walkLeft;
+	public static Animation walkRight;
 	public static Animation standingUP;
 	public static Animation standingDOWN;
 	
@@ -26,8 +28,7 @@ public class Player extends Element {
 	
 	public final Vector2 velocity;
 	private State state;
-	private boolean facesDown;
-	private boolean right;
+	private int move;
 	private float stateTime;
 	private float hitTime;
 	private int keys;
@@ -51,6 +52,17 @@ public class Player extends Element {
 		walkDOWN = new Animation(0.15f, regions[0], regions[1], regions[2]);
 		walkUP.setPlayMode(Animation.LOOP);
 		walkDOWN.setPlayMode(Animation.LOOP);
+
+		walkLeft = new Animation(0.15f, regions[6], regions[7], regions[8]);
+		TextureRegion flip1 = new TextureRegion(regions[6]);
+		TextureRegion flip2 = new TextureRegion(regions[7]);
+		TextureRegion flip3 = new TextureRegion(regions[8]);
+		flip1.flip(true, false);
+		flip2.flip(true, false);
+		flip3.flip(true, false);
+		walkRight = new Animation(0.15f, flip1, flip2, flip3);
+		walkLeft.setPlayMode(Animation.LOOP);
+		walkRight.setPlayMode(Animation.LOOP);
 		
 	}
 	
@@ -72,14 +84,12 @@ public class Player extends Element {
 				}
 			}
 		}
-		
+
 		switch (key) {
 			//DOWN
 			case 2:
 				velocity.y = -MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = true;
-				right = true;
 				break;
 				
 			//left-d
@@ -87,16 +97,12 @@ public class Player extends Element {
 				velocity.x = -MAX_VELOCITY;
 				velocity.y = -MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = true;
-				right = false;
 				break;
 			
 			//left
 			case 4:
 				velocity.x = -MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = true;
-				right = false;
 				break;
 				
 			//left-u
@@ -104,43 +110,41 @@ public class Player extends Element {
 				velocity.x = -MAX_VELOCITY;
 				velocity.y = MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = false;
-				right = false;
 				break;
 			//up
 			case 8:
 				velocity.y = MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = false;
-				right = true;
 				break;
 			//right-u
 			case 9:
 				velocity.x = MAX_VELOCITY;
 				velocity.y = MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = false;
-				right = true;
 				break;
 			//right
 			case 6:
 				velocity.x = MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = true;
-				right = true;
 				break;
 			//right-d
 			case 3:
 				velocity.x = MAX_VELOCITY;
 				velocity.y = -MAX_VELOCITY;
 				state = State.Walking;
-				facesDown = true;
-				right = true;
 				break;
 				
 			default:
-				state = state.Standing;
+				if(state != state.Standing) {
+					state = state.Standing;
+					if(move  < 7)
+						move = -1;
+					else 
+						move = 0;
+				}
 		}
+		if (state != state.Standing)
+			move = key;
 		
 		velocity.scl(delta);		
 		
@@ -330,7 +334,7 @@ public class Player extends Element {
 		batch.begin();
 		switch (state) {
 			case Standing:
-				if (facesDown) {
+				if (move == -1) {
 					frame = standingDOWN.getKeyFrame(stateTime);
 				}
 				else {
@@ -338,11 +342,20 @@ public class Player extends Element {
 				}
 				break;
 			case Walking:
-				if (facesDown) {
+				if (move < 4) {
 					frame = walkDOWN.getKeyFrame(stateTime);
 				}
 				else {
-					frame = walkUP.getKeyFrame(stateTime);
+					if (move > 6)
+						frame = walkUP.getKeyFrame(stateTime);
+					else {
+						if (move == 4) {
+							frame = walkLeft.getKeyFrame(stateTime);
+						}
+						else {
+							frame = walkRight.getKeyFrame(stateTime);
+						}
+					}
 				}
 				break;
 		}		

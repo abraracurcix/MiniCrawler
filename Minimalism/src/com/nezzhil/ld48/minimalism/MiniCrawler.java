@@ -16,7 +16,7 @@ public class MiniCrawler extends Game {
 
 	@Override
 	public void create() {
-		SoundResources instance = SoundResources.getInstance();
+		SoundResources.getInstance();
 		font = new BitmapFont(Gdx.files.internal("data/font.fnt"), Gdx.files.internal("data/font.png"), false, false);
 		changeScreen(MenuScreen.ID);
 	}	

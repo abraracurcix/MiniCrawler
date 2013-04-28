@@ -72,8 +72,10 @@ public class Enemy extends Element {
 				if (hitTime > 2f) {
 					hitTime = 0f;
 					hit = false;
-					used = true;
-					position.set(-100, -100);
+					if(life < 1) {
+						used = true;
+						position.set(-100, -100);
+					}
 				}
 			}
 		}
@@ -212,6 +214,7 @@ public class Enemy extends Element {
 	 */
 	public void setHit(boolean hit) {
 		this.hit = hit;
+		life--;
 	}
 	
 	

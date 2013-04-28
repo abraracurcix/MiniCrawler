@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 
 public class Wizard extends Enemy {
@@ -16,7 +15,6 @@ public class Wizard extends Enemy {
 	private int minX, minY;
 	private float teleportTime, stateTime;
 	private int move;
-	private boolean right;
 	private Shoot fire;
 	private Animation shootAnimationU;
 	private Animation shootAnimationD;
@@ -63,7 +61,7 @@ public class Wizard extends Enemy {
 		stateTime += delta;
 		Random rand = new Random();
 		float f = rand.nextFloat();
-		int n = rand.nextInt(maxY);
+		int n = rand.nextInt(maxX);
 		float nextX = f + (float) n + minX;
 		f = rand.nextFloat();
 		n = rand.nextInt(maxY);
@@ -114,18 +112,7 @@ public class Wizard extends Enemy {
 		
 		fire.velocity.scl(delta);
 		
-		int startX, endX, startY, endY;
 		Rectangle rect = new Rectangle(fire.position.x, fire.position.y, fire.WIDTH, fire.HEIGHT);
-		
-		if (velocity.x > 0) {
-			startX = endX = (int) (fire.position.x + fire.WIDTH + fire.velocity.x);
-		}
-		else {
-			startX = endX = (int) (fire.position.x + fire.velocity.x);
-		}
-		
-		startY = (int) (fire.position.y);
-		endY = (int) (fire.position.y + fire.HEIGHT);
 		
 		rect.x += velocity.x;
 		//GETTILES TO HITS
@@ -143,14 +130,6 @@ public class Wizard extends Enemy {
 
 		rect.x = fire.position.x;
 		rect.y += fire.velocity.y;
-		if (fire.velocity.y > 0) {
-			startY = endY = (int) (fire.position.y + fire.HEIGHT + fire.velocity.y);
-		}
-		else {
-			startY = endY = (int) (fire.position.y + fire.velocity.y);
-		}		
-		startX = (int) (fire.position.x);
-		endX = (int) (fire.position.x + fire.WIDTH);
 		
 		//GETTILES TO HITS			
 		

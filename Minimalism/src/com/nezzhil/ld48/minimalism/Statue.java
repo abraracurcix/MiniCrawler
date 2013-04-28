@@ -66,18 +66,8 @@ public class Statue extends Enemy {
 			
 			fire.velocity.scl(delta);
 			
-			int startX, endX, startY, endY;
+
 			Rectangle rect = new Rectangle(fire.position.x, fire.position.y, fire.WIDTH, fire.HEIGHT);
-			
-			if (velocity.x > 0) {
-				startX = endX = (int) (fire.position.x + fire.WIDTH + fire.velocity.x);
-			}
-			else {
-				startX = endX = (int) (fire.position.x + fire.velocity.x);
-			}
-			
-			startY = (int) (fire.position.y);
-			endY = (int) (fire.position.y + fire.HEIGHT);
 			
 			rect.x += velocity.x;
 			//GETTILES TO HITS
@@ -95,14 +85,6 @@ public class Statue extends Enemy {
 
 			rect.x = fire.position.x;
 			rect.y += fire.velocity.y;
-			if (fire.velocity.y > 0) {
-				startY = endY = (int) (fire.position.y + fire.HEIGHT + fire.velocity.y);
-			}
-			else {
-				startY = endY = (int) (fire.position.y + fire.velocity.y);
-			}		
-			startX = (int) (fire.position.x);
-			endX = (int) (fire.position.x + fire.WIDTH);
 			
 			//GETTILES TO HITS			
 			

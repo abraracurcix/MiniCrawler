@@ -5,9 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import com.nezzhil.ld48.minimalism.Enemy.State;
 
 public class Boulder extends Enemy {
 	
@@ -16,12 +14,8 @@ public class Boulder extends Enemy {
 	public static float MAX_VELOCITY = 100f;
 	public static float DAMPING = 0.9f;
 	
-	private State state;
 	private int move;
-	private boolean right;
 	private float stateTime;
-	private float hitTime;
-	private float life = 0;
 
 	public Boulder(float x, float y) {
 		super(x, y);

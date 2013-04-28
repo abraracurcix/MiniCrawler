@@ -18,7 +18,6 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
-import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
@@ -50,9 +49,6 @@ public class GameScreen implements Screen {
 	private static Array<Rectangle> tiles;
 	
 	public GameScreen(MiniCrawler mini) {
-
-		float w = Gdx.graphics.getWidth();
-		float h = Gdx.graphics.getHeight();
 		
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 140, 140);
