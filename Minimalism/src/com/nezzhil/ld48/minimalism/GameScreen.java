@@ -34,7 +34,7 @@ public class GameScreen implements Screen {
 	private OrthogonalTiledMapRenderer renderer;
 	private static Array<Enemy> enemies;
 	private static Array<Element> objects;
-	private int level;
+	public static int level;
 	private MiniCrawler game;
 	private TextureRegion key;
 	
@@ -56,7 +56,7 @@ public class GameScreen implements Screen {
 		
 		batch = new SpriteBatch();
 		hud = new SpriteBatch();		
-		level = 5;
+		level = 0;
 		key = ImageResources.getInstance().getRegions(-1)[6];
 		game = mini;
 	}
@@ -208,7 +208,6 @@ public class GameScreen implements Screen {
 		
 		if(player.getLifes() < 1) {
 			game.setWin(false);
-			level = 0;
 			game.changeScreen(GameOverScreen.ID);
 		}
 		

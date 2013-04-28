@@ -55,7 +55,7 @@ public class MenuScreen implements Screen {
 		
 		batch.begin();
 		batch.draw(background, 0, 0, 640, 640);
-		font.draw(batch, "Press any arrow to begin.", 20, 200);
+		font.draw(batch, "Press any arrow to begin.", 40, 200);
 		batch.end();
 
 	}

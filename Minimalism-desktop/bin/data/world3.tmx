@@ -27,7 +27,7 @@
   </object>
   <object name="Stairs" x="224" y="288">
    <properties>
-    <property name="next" value="5"/>
+    <property name="next" value="4"/>
    </properties>
   </object>
   <object name="Statue" x="160" y="336">

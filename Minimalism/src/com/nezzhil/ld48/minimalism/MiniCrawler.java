@@ -11,6 +11,7 @@ public class MiniCrawler extends Game {
 	private GameOverScreen gameover;
 	private MenuScreen menu;
 	private boolean win;
+	public int continues;
 	
 	public static BitmapFont font;
 
@@ -25,6 +26,7 @@ public class MiniCrawler extends Game {
 		
 		switch(id) {
 			case MenuScreen.ID:
+				continues = 3;
 				if (menu == null) {
 					menu = new MenuScreen(this);
 				}
@@ -40,6 +42,7 @@ public class MiniCrawler extends Game {
 				if (gameover == null) {
 					gameover = new GameOverScreen(this);					
 				}
+				if(!win) continues--;
 				gameover.setWin(win);
 				setScreen(gameover);
 				break;

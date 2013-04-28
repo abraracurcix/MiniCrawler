@@ -25,8 +25,13 @@ public class GameOverScreen implements Screen {
 	public void render(float delta) {
 		
 		if (Gdx.input.isKeyPressed(Keys.R)) {
+			if(game.continues == 0) {
 
-			game.changeScreen(MenuScreen.ID);
+				GameScreen.level = 0;
+				game.changeScreen(MenuScreen.ID);
+			}
+			else 
+				game.changeScreen(GameScreen.ID);
 		}
 
 		Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -34,7 +39,11 @@ public class GameOverScreen implements Screen {
 		
 		batch.begin();
 		if(win)	MiniCrawler.font.draw(batch, WINWORDS, 30, 350);
-		else MiniCrawler.font.draw(batch, LOSEWORDS, 90, 350);
+		else {
+			MiniCrawler.font.draw(batch, LOSEWORDS, 90, 350);			
+		}
+		
+		MiniCrawler.font.draw(batch, "Press R to continue", 120, 210);
 		batch.end();
 	}
 
