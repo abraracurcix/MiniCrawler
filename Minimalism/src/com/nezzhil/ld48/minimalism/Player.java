@@ -37,7 +37,7 @@ public class Player extends Element {
 	
 	public Player(float x, float y) {
 		super(x, y);
-		lifes = 10;
+		lifes = 5;
 		keys = 0;
 		velocity = new Vector2();
 		state = State.Standing;
@@ -66,7 +66,7 @@ public class Player extends Element {
 			}
 			else {
 				hitTime += delta;
-				if (hitTime > 2f) {
+				if (hitTime > 1.2f) {
 					hitTime = 0f;
 					hit = false;
 				}
@@ -171,6 +171,7 @@ public class Player extends Element {
 		for(Element ele : all) {
 			if(ele != this && this.hit(rect, ele) && ele.used == false) {
 				if(ele.getClass() == Stairs.class) {
+					SoundResources.getInstance().getItem().play(0.25f);
 					screen.changeLevel(((Stairs) ele).getNextLevel());
 					continue;
 				}
@@ -242,6 +243,7 @@ public class Player extends Element {
 		for(Element ele : all) {
 			if(ele != this && this.hit(rect, ele) && ele.used == false) {
 				if(ele.getClass() == Stairs.class) {
+					SoundResources.getInstance().getItem().play(0.25f);
 					screen.changeLevel(((Stairs) ele).getNextLevel());
 					continue;
 				}

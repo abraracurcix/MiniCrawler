@@ -13,7 +13,7 @@ public class Boulder extends Enemy {
 	
 	public static Animation upDown;
 	public static Animation leftRigth;
-	public static float MAX_VELOCITY = 90f;
+	public static float MAX_VELOCITY = 100f;
 	public static float DAMPING = 0.9f;
 	
 	private State state;

@@ -2,6 +2,7 @@ package com.nezzhil.ld48.minimalism;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -22,6 +23,11 @@ public class GameOverScreen implements Screen {
 	
 	@Override
 	public void render(float delta) {
+		
+		if (Gdx.input.isKeyPressed(Keys.R)) {
+
+			game.changeScreen(MenuScreen.ID);
+		}
 
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);

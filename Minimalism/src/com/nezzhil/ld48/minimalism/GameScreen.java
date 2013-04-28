@@ -195,6 +195,7 @@ public class GameScreen implements Screen {
 		
 		if(player.getLifes() < 1) {
 			game.setWin(false);
+			level = 0;
 			game.changeScreen(GameOverScreen.ID);
 		}
 		
@@ -284,11 +285,11 @@ public class GameScreen implements Screen {
 		
 		batch.setProjectionMatrix(camera.combined);
 
-		for(Enemy ene : enemies) {
-			ene.draw(batch);
-		}
 		for(Element obj : objects) {
 			obj.draw(batch);
+		}
+		for(Enemy ene : enemies) {
+			ene.draw(batch);
 		}
 		player.draw(batch);
 
@@ -301,7 +302,8 @@ public class GameScreen implements Screen {
 		pix.dispose();
 		MiniCrawler.font.draw(hud, "LIFE", 0, 600);
 		MiniCrawler.font.draw(hud, "" + player.getLifes(), 80, 600);
-		//MiniCrawler.font.draw(hud, "KEYS", 400, 600);
+		MiniCrawler.font.draw(hud, "'R' to restart", 190, 620);
+		MiniCrawler.font.draw(hud, "Level " + level, 240, 580);
 		hud.draw(key, 430, 570, key.getRegionWidth()*3, key.getRegionHeight()*3);
 		MiniCrawler.font.draw(hud, "" + player.getKeys(), 500, 600);
 		hud.end();

@@ -73,7 +73,7 @@ public class Enemy extends Element {
 					hitTime = 0f;
 					hit = false;
 					used = true;
-					position.set(0, 0);
+					position.set(-100, -100);
 				}
 			}
 		}
