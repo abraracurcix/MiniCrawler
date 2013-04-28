@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="35" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ground" tilewidth="16" tileheight="16">
+  <image source="output/ground.png" trans="ff00ff" width="64" height="16"/>
+ </tileset>
+ <layer name="world" width="32" height="35">
+  <data encoding="base64" compression="zlib">
+   eJzt0LENACAMA8GQ/YdmASSoQhRd8fVZzohISc8tfrl3i8/n8/nz/NOeSq+T/+vzLr4kTWkDImQISg==
+  </data>
+ </layer>
+ <layer name="block" width="32" height="35">
+  <data encoding="base64" compression="zlib">
+   eJzt1UsKACAIAFHx/oduKyKt/GDNQBQRvKBFIkR7UjOmfDu/7mswbvsVfuY5fHx8fPw9/uT/E93Fr7vy3o9+95sTEVV1AN28AIE=
+  </data>
+ </layer>
+ <objectgroup name="objects1" width="32" height="35">
+  <object name="Stairs" x="208" y="240">
+   <properties>
+    <property name="next" value="9"/>
+   </properties>
+  </object>
+  <object name="Wall" x="208" y="224">
+   <properties>
+    <property name="link" value="3"/>
+   </properties>
+  </object>
+  <object name="Wall" x="208" y="256">
+   <properties>
+    <property name="link" value="1"/>
+   </properties>
+  </object>
+  <object name="Wall" x="224" y="240">
+   <properties>
+    <property name="link" value="3"/>
+   </properties>
+  </object>
+  <object name="Wall" x="192" y="240">
+   <properties>
+    <property name="link" value="3"/>
+   </properties>
+  </object>
+  <object name="Statue" x="224" y="224">
+   <properties>
+    <property name="left" value="1"/>
+    <property name="time" value="2"/>
+   </properties>
+  </object>
+  <object name="Statue" x="224" y="256">
+   <properties>
+    <property name="left" value="1"/>
+    <property name="time" value="2"/>
+   </properties>
+  </object>
+  <object name="Statue" x="192" y="256">
+   <properties>
+    <property name="left" value="0"/>
+    <property name="time" value="2"/>
+   </properties>
+  </object>
+  <object name="Statue" x="192" y="224">
+   <properties>
+    <property name="left" value="0"/>
+    <property name="time" value="2"/>
+   </properties>
+  </object>
+  <object name="Door" x="208" y="352"/>
+  <object name="Heroe" x="208" y="400"/>
+  <object name="Coffer" x="224" y="384"/>
+  <object name="Lever" x="208" y="336">
+   <properties>
+    <property name="link" value="2"/>
+   </properties>
+  </object>
+  <object name="Knight" x="208" y="112">
+   <properties>
+    <property name="link" value="1"/>
+   </properties>
+  </object>
+  <object name="Wall" x="208" y="144">
+   <properties>
+    <property name="link" value="2"/>
+   </properties>
+  </object>
+  <object name="Boulder" x="240" y="176"/>
+ </objectgroup>
+</map>

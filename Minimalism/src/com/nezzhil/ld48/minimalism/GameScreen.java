@@ -56,7 +56,7 @@ public class GameScreen implements Screen {
 		
 		batch = new SpriteBatch();
 		hud = new SpriteBatch();		
-		level = 0;
+		level = 5;
 		key = ImageResources.getInstance().getRegions(-1)[6];
 		game = mini;
 	}
@@ -67,6 +67,7 @@ public class GameScreen implements Screen {
 		Array<Lever> levers = new Array<Lever>();
 		Array<Button> buttons = new Array<Button>();
 		Array<Wall> walls = new Array<Wall>();
+		Array<Knight> kns = new Array<Knight>();
 		for(MapObject obj : layer.getObjects()) {
 			RectangleMapObject rectObj = (RectangleMapObject) obj;
 			if(rectObj.getName().equals("Heroe")) {
@@ -76,6 +77,14 @@ public class GameScreen implements Screen {
 			if(rectObj.getName().equals("Lime")) {
 				Enemy lime1 = new Enemy(ImageResources.LIME, rectObj.getRectangle().x*2, rectObj.getRectangle().y*2);
 				enemies.add(lime1);
+				continue;
+			}
+			if(rectObj.getName().equals("Knight")) {
+				MapProperties prop = rectObj.getProperties();
+				Knight kn = new Knight(rectObj.getRectangle().x*2, rectObj.getRectangle().y*2,
+					((String)prop.get("link")));
+				enemies.add(kn);
+				kns.add(kn);
 				continue;
 			}
 			if(rectObj.getName().equals("Statue")) {
@@ -174,6 +183,14 @@ public class GameScreen implements Screen {
 		}
 		
 		for(Button l : buttons) {
+			for(Wall w : walls) {
+				if(w.getId().equals(l.getLinkID())) {
+					l.setLink(w);
+				}
+			}
+		}
+		
+		for(Knight l : kns) {
 			for(Wall w : walls) {
 				if(w.getId().equals(l.getLinkID())) {
 					l.setLink(w);

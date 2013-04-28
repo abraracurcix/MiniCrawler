@@ -74,11 +74,15 @@ public class Statue extends Enemy {
 			Array<Element> all = screen.getAll();		
 			
 			for(Element ele : all) {
-				if(ele.getClass() == Player.class && this.hit(rect, ele)) {
-					if(((Player) ele).isHit() == false) {
+				if((ele.getClass() == Player.class || ele.getClass() == Knight.class) && this.hit(rect, ele)) {
+					if(ele.getClass() == Player.class && ((Player) ele).isHit() == false) {
 						SoundResources.getInstance().getHit().play(0.25f);
 						((Player) ele).setLifes(-1);
 						((Player) ele).setHit(true);
+					}
+					if(ele.getClass() == Knight.class && ((Knight) ele).isHit() == false) {
+						SoundResources.getInstance().getHit().play(0.25f);
+						((Knight) ele).setHit(true);
 					}
 				}
 			}
@@ -89,11 +93,15 @@ public class Statue extends Enemy {
 			//GETTILES TO HITS			
 			
 			for(Element ele : all) {
-				if(ele.getClass() == Player.class && this.hit(rect, ele)) {
-					if(((Player) ele).isHit() == false) {
+				if((ele.getClass() == Player.class || ele.getClass() == Knight.class) && this.hit(rect, ele)) {
+					if(ele.getClass() == Player.class && ((Player) ele).isHit() == false) {
 						SoundResources.getInstance().getHit().play(0.25f);
 						((Player) ele).setLifes(-1);
 						((Player) ele).setHit(true);
+					}
+					if(ele.getClass() == Knight.class && ((Knight) ele).isHit() == false) {
+						SoundResources.getInstance().getHit().play(0.25f);
+						((Knight) ele).setHit(true);
 					}
 				}
 			}

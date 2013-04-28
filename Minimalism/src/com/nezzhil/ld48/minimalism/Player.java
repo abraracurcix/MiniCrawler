@@ -181,7 +181,6 @@ public class Player extends Element {
 				}
 				if(ele.getClass() == Rock.class) {
 					((Rock) ele).setVelocity(velocity.x, 0);
-					continue;
 				}
 				if(ele.getClass() != Spike.class && ele.getClass() != Button.class) velocity.x = 0;
 				if(ele.getClass() == Enemy.class) {
@@ -189,6 +188,14 @@ public class Player extends Element {
 						SoundResources.getInstance().getHit().play(0.25f);
 						setHit(true);
 						((Enemy) ele).setHit(true);
+						lifes--;
+					}
+					continue;
+				}
+				if(ele.getClass() == Knight.class) {
+					if(isHit() == false) {
+						SoundResources.getInstance().getHit().play(0.25f);
+						setHit(true);
 						lifes--;
 					}
 					continue;
@@ -253,7 +260,6 @@ public class Player extends Element {
 				}
 				if(ele.getClass() == Rock.class) {
 					((Rock) ele).setVelocity(0, velocity.y);
-					continue;
 				}
 				if(ele.getClass() != Spike.class && ele.getClass() != Button.class) velocity.y = 0;
 				if(ele.getClass() == Enemy.class) {
@@ -261,6 +267,14 @@ public class Player extends Element {
 						SoundResources.getInstance().getHit().play(0.25f);
 						setHit(true);
 						((Enemy) ele).setHit(true);
+						lifes--;
+					}
+					continue;
+				}
+				if(ele.getClass() == Knight.class) {
+					if(isHit() == false) {
+						SoundResources.getInstance().getHit().play(0.25f);
+						setHit(true);
 						lifes--;
 					}
 					continue;

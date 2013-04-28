@@ -45,7 +45,15 @@ public class Rock extends Element {
 				break;
 			}
 		}	
+		Array<Element> all = GameScreen.getAll();
 		
+		for(Element ele : all) {
+			if(ele != this && this.hit(rect, ele) && ele.used == false) {
+				if(ele.getClass() == Rock.class) {
+					velocity.x = 0;
+				}
+			}
+		}
 
 		rect.x = position.x;
 		rect.y += velocity.y;
@@ -60,6 +68,14 @@ public class Rock extends Element {
 		
 		//GETTILES TO HITS
 		tiles = GameScreen.getTiles(startX/32, startY/32, endX/32, endY/32);
+		
+		for(Element ele : all) {
+			if(ele != this && this.hit(rect, ele) && ele.used == false) {
+				if(ele.getClass() == Rock.class) {
+					velocity.y = 0;
+				}
+			}
+		}
 
 		for (Rectangle tile : tiles) {
 			if (rect.overlaps(tile)) {

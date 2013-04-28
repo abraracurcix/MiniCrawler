@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="35" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ground" tilewidth="16" tileheight="16">
+  <image source="output/ground.png" trans="ff00ff" width="64" height="16"/>
+ </tileset>
+ <layer name="world" width="32" height="35">
+  <data encoding="base64" compression="zlib">
+   eJztkkkKACEQA3v5/5/nJEhgdHCZiORQiDR0kSZhZiGEEA28Av/ILn+S/cz8AbtrX5L9t93f4cX+9ZjJ1iIH95/uf+sXzv7q+Zf+MUii28n+kp91f+U/Iz/TL4QQK3kA2vgIaA==
+  </data>
+ </layer>
+ <layer name="block" width="32" height="35" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztlFsKACAIBMP7H7p/U3toGrEDgUEwa1itAQBehg5WtN/az87D7/eTUP/oX5nnSL/m2unX698l8v17/V6ke+e15omcc+sepfm78c/OsvE6C2J1hZ9nyPZrWbL86H/MUpGhyg8A+I8ONyAA1w==
+  </data>
+ </layer>
+ <objectgroup name="objects1" width="32" height="35">
+  <object name="Boulder" x="288" y="176"/>
+  <object name="Lever" x="272" y="192">
+   <properties>
+    <property name="link" value="1"/>
+   </properties>
+  </object>
+  <object name="Wall" x="208" y="288">
+   <properties>
+    <property name="link" value="1"/>
+   </properties>
+  </object>
+  <object name="Stairs" x="224" y="288">
+   <properties>
+    <property name="next" value="5"/>
+   </properties>
+  </object>
+  <object name="Statue" x="160" y="336">
+   <properties>
+    <property name="left" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Statue" x="160" y="400">
+   <properties>
+    <property name="left" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Statue" x="160" y="368">
+   <properties>
+    <property name="left" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Statue" x="192" y="384">
+   <properties>
+    <property name="left" value="0"/>
+    <property name="time" value="2"/>
+   </properties>
+  </object>
+  <object name="Statue" x="192" y="352">
+   <properties>
+    <property name="left" value="0"/>
+    <property name="time" value="2"/>
+   </properties>
+  </object>
+  <object name="Lever" x="176" y="416">
+   <properties>
+    <property name="link" value="2"/>
+   </properties>
+  </object>
+  <object name="PointMage" x="165" y="133" width="33" height="36"/>
+  <object name="Coffer" x="176" y="160"/>
+  <object name="PointMage" x="80" y="224" width="16" height="16"/>
+  <object name="PointMage" x="112" y="224" width="16" height="16"/>
+  <object name="PointMage" x="96" y="272" width="16" height="16"/>
+  <object name="PointMage" x="48" y="272" width="16" height="16"/>
+  <object name="Heroe" type="heroe" x="28" y="257"/>
+  <object name="Wall" x="176" y="192">
+   <properties>
+    <property name="link" value="2"/>
+   </properties>
+  </object>
+  <object name="Door" x="208" y="240"/>
+ </objectgroup>
+</map>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="35" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="ground" tilewidth="16" tileheight="16">
+  <image source="output/ground.png" trans="ff00ff" width="64" height="16"/>
+ </tileset>
+ <layer name="world" width="32" height="35">
+  <data encoding="base64" compression="zlib">
+   eJzt0iEOADAIBMGD/z+6quYchmvSFaMXAi2pAQAjFW5fv/XrgX7q/r779gzeTPXT90/+gM+S7AMAgLkDjSEIow==
+  </data>
+ </layer>
+ <layer name="block" width="32" height="35">
+  <data encoding="base64" compression="zlib">
+   eJztkUEKACAIBKX/P7qrSIQddiWYgcD2MrJGAAD8xUpvyl1np//2V7un/Z1M5c53r5nD/5Ir/acunP5OrvDXDpz+vMNE/7ddAAAAoM8GFRUATw==
+  </data>
+ </layer>
+ <objectgroup name="objects1" width="32" height="35">
+  <object name="Stairs" x="240" y="176">
+   <properties>
+    <property name="next" value="5"/>
+   </properties>
+  </object>
+  <object name="Rock" x="256" y="192"/>
+  <object name="Rock" x="208" y="288"/>
+  <object name="Heroe" x="261" y="315"/>
+  <object name="Rock" x="240" y="256"/>
+  <object name="Rock" x="240" y="224"/>
+  <object name="Rock" x="224" y="208"/>
+  <object name="Rock" x="256" y="224"/>
+  <object name="Rock" x="256" y="288"/>
+  <object name="Rock" x="192" y="288"/>
+ </objectgroup>
+</map>

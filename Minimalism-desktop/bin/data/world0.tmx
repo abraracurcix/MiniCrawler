@@ -3,115 +3,161 @@
  <tileset firstgid="1" name="ground" tilewidth="16" tileheight="16">
   <image source="output/ground.png" trans="ff00ff" width="64" height="16"/>
  </tileset>
- <tileset firstgid="5" name="utils" tilewidth="16" tileheight="16">
-  <image source="output/utils.png" trans="ff00ff" width="128" height="32"/>
- </tileset>
- <layer name="block" width="32" height="35">
-  <data encoding="base64" compression="zlib">
-   eJztlEsOwCAIRI33P3T3pjAzfGptSsKiijwcLHOMMRf3bN1H8cjUfDv4qz4TrHfwI7l+fh3f6vET/c/ER/jIM/EM34u1+Gz+U/nM/KniZ950Rf+ns8/wM/EVfMVRTdn/27M38z29InPG46A16yz6ZmdnF585E+0vy1fvb7EYLS0+ysvw1RiFX+URPmuqjmz/I/y7GR19/yfyUT1f5+/WX5njXe8f8dWcKh/p38lH9XTxO/wC+70Caw==
-  </data>
- </layer>
  <layer name="world" width="32" height="35">
   <data encoding="base64" compression="zlib">
-   eJztk0sOwCAIRBXvf+euTIixhVGIH7qYhSb4gBkppUSgMhNa21NhOoFPhmwtPyv082Pk73a+5K90h/Z3Ar/nwZcvM3zNu5Z/MDK/1hXBaw8RY1et4EvzS7kf7ZPXtbOP+KzJwe78mZx78dG/1NZo/EdnteRbyZuP7BHtEeFL59v5OTh/9f7f3tmJr5Hn/j35mvx58D30AA0dB2M=
-  </data>
- </layer>
- <layer name="objects" width="32" height="35" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20KP6AAAAAAeBoRgAAB
+   eJztzbENADAIBLGH7L8zKbJEkIvTle4k/VF1O+98Pp/P5/P5fD6fz+fzd/rbGpXlCKE=
   </data>
  </layer>
  <objectgroup name="objects1" width="32" height="35">
-  <object name="Heroe" type="heroe" x="33" y="17" width="13" height="14"/>
-  <object name="Lime" x="17" y="130" width="15" height="14"/>
-  <object name="Lime" x="47" y="256" width="15" height="14"/>
-  <object name="Lime" x="99" y="354" width="15" height="14"/>
-  <object name="Lime" x="112" y="338" width="15" height="14"/>
-  <object name="Coffer" x="64" y="272"/>
-  <object name="Door" x="224" y="192"/>
-  <object name="Door" x="192" y="288"/>
-  <object name="Boulder" x="448" y="288"/>
-  <object name="Statue" x="208" y="448">
+  <object name="Heroe" x="212" y="29"/>
+  <object name="Stairs" x="208" y="528">
    <properties>
-    <property name="left" value="0"/>
-    <property name="time" value="3"/>
+    <property name="next" value="1"/>
    </properties>
   </object>
-  <object name="Statue" x="224" y="512">
-   <properties>
-    <property name="left" value="1"/>
-    <property name="time" value="3"/>
-   </properties>
-  </object>
-  <object name="Statue" x="224" y="496">
-   <properties>
-    <property name="left" value="1"/>
-    <property name="time" value="2"/>
-   </properties>
-  </object>
-  <object name="Wall" x="144" y="192">
-   <properties>
-    <property name="link" value="0"/>
-   </properties>
-  </object>
-  <object name="Wall" x="304" y="192">
-   <properties>
-    <property name="link" value="1"/>
-   </properties>
-  </object>
-  <object name="Lever" x="208" y="544">
-   <properties>
-    <property name="link" value="0"/>
-   </properties>
-  </object>
-  <object name="Teleport" x="400" y="368"/>
-  <object name="Teleport" x="240" y="544"/>
-  <object name="Lever" x="80" y="160">
-   <properties>
-    <property name="link" value="1"/>
-   </properties>
-  </object>
-  <object name="Coffer" x="368" y="160"/>
-  <object name="Stairs" x="224" y="32">
-   <properties>
-    <property name="next" value="-1"/>
-   </properties>
-  </object>
-  <object name="PointMage" x="304" y="160" width="80" height="32"/>
-  <object name="Statue" x="208" y="464">
-   <properties>
-    <property name="left" value="0"/>
-    <property name="time" value="2"/>
-   </properties>
-  </object>
-  <object name="Spikes" x="144" y="160">
+  <object name="Spikes" x="208" y="80">
    <properties>
     <property name="init" value="1"/>
     <property name="time" value="3"/>
    </properties>
   </object>
-  <object name="Spikes" x="128" y="176">
+  <object name="Spikes" x="208" y="400">
    <properties>
-    <property name="init" value="0"/>
+    <property name="init" value="1"/>
     <property name="time" value="3"/>
    </properties>
   </object>
-  <object name="Spikes" x="128" y="160">
+  <object name="Spikes" x="208" y="368">
    <properties>
-    <property name="init" value="0"/>
+    <property name="init" value="1"/>
     <property name="time" value="3"/>
    </properties>
   </object>
-  <object name="Button" x="176" y="80">
+  <object name="Spikes" x="208" y="320">
    <properties>
-    <property name="link" value="6"/>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
    </properties>
   </object>
-  <object name="Wall" x="224" y="48">
+  <object name="Spikes" x="224" y="160">
    <properties>
-    <property name="link" value="6"/>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
    </properties>
   </object>
-  <object name="Rock" x="256" y="80"/>
+  <object name="Spikes" x="192" y="128">
+   <properties>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="208" y="112">
+   <properties>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="192" y="64">
+   <properties>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="224" y="96">
+   <properties>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="224" y="304">
+   <properties>
+    <property name="init" value="2"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="208" y="288">
+   <properties>
+    <property name="init" value="2"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="192" y="208">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="192" y="272">
+   <properties>
+    <property name="init" value="2"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="208" y="208">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="192" y="352">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="224" y="208">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Lime" x="224" y="479"/>
+  <object name="Spikes" x="208" y="192">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="224" y="192">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="192" y="192">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="224" y="400">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="192" y="400">
+   <properties>
+    <property name="init" value="3"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="224" y="480">
+   <properties>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
+  <object name="Spikes" x="192" y="480">
+   <properties>
+    <property name="init" value="1"/>
+    <property name="time" value="3"/>
+   </properties>
+  </object>
  </objectgroup>
+ <layer name="block" width="32" height="35">
+  <data encoding="base64" compression="zlib">
+   eJzt2DEKADAIBEHJ/x9tLxZpNBBm4erpL+K+02yz6vH5fD6fz+fz+Xw+n8//03/5P0yUTLsAlQ==
+  </data>
+ </layer>
 </map>
